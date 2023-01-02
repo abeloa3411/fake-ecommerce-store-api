@@ -6,7 +6,8 @@ Enjoy it and feel free to contribute and alert incase of any errors
 
 ### Resources
 
-products:http://api/v1/products
+products: url to be posted soon
+auth: url to be posted soon
 
 ### Usage
 
@@ -103,7 +104,7 @@ fetch("", {
     "name": "updated product",
     "image": "img url",
     "description": "updated product description",
-    "category": "office",
+    "category": "electrinics",
 
 }
 */
