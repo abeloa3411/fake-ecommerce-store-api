@@ -23,16 +23,16 @@ export const getSingleProduct = async (req, res) => {
   }
 };
 
-//update a product
+//upload a product
 
 export const uploadProduct = async (req, res) => {
   try {
-    const { id, price, title, image, description, category } = req.body;
+    const { id, price, name, image, description, category } = req.body;
 
     const isToSave = new Product({
       id,
       price,
-      title,
+      name,
       image,
       description,
       category,
@@ -52,7 +52,7 @@ export const deleteProduct = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const isDeleted = Product.findOneAndDelete({ _id: id });
+    const isDeleted = await Product.findOneAndDelete({ _id: id });
 
     res.status(200).json(isDeleted);
   } catch (error) {
@@ -64,11 +64,11 @@ export const deleteProduct = async (req, res) => {
 
 export const updateProduct = async (req, res) => {
   const { id } = req.params;
-  const { price, title, image, description, category } = req.body;
+  const { price, name, image, description, category } = req.body;
 
   const data = {
     price,
-    title,
+    name,
     image,
     description,
     category,
