@@ -107,5 +107,104 @@ fetch("", {
     "category": "electrinics",
 
 }
+
+Note: The update will not occur on the database
 */
 ```
+
+#### This are the available routes
+
+#### Products
+
+```js
+//request body
+
+{
+  price: Number,
+  name:String,
+  image: String,
+  description: String,
+  category: String
+  }
+
+```
+
+GET
+
+/products (get all products)
+/products/:id (get a single product)
+/products/category/home (sort products using category)
+
+POST
+
+/products
+
+PUT
+
+/products/:id
+
+DELETE
+
+/products/:id
+
+#### User
+
+```js
+
+{
+
+  id:Number,
+  full_name: String,
+  email: String,
+  password: String,
+  telephone: Number,
+
+}
+
+```
+
+GET
+
+/user (get all users)
+/user/:id (get a single user)
+
+POST
+
+/user
+
+DELETE
+
+/user/:id (remove a user)
+
+PATCH
+
+/user/:id (update a user)
+
+#### Auth
+
+```js
+//login fields
+{
+  email: String;
+  password: String;
+}
+```
+
+POST
+
+/auth/login
+
+```js
+//sign in fields
+{
+  full_name: String,
+  email: String,
+  password: String,
+  telephone: Number,
+
+}
+```
+
+/auth/signup
+
+Enjoy and feel free to contribute.

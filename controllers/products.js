@@ -81,3 +81,21 @@ export const updateProduct = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+//sorting by category
+export const sortCategory = async (req, res) => {
+  const { category } = req.query;
+
+  let queryObject = {};
+
+  if (category) {
+    queryObject.category = category;
+  }
+
+  try {
+    const obj = await Product.find(queryObject);
+    res.status(200).json(obj);
+  } catch (error) {
+    res.status(200).json({ error: error.message });
+  }
+};
