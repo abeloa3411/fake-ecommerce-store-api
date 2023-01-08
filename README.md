@@ -4,6 +4,10 @@ This is a free REST api that provides users with real time ecommerce data in jso
 you can use this free api.The api is good for learning, teaching and testing purposes only.
 Enjoy it and feel free to contribute and alert incase of any errors
 
+### Why
+
+I made this api for teaching purposes only, In a case for a frontend website i found it hard to using lorem ipsum, hence created the api with mongodb node and express It is also good for testing purposes.
+
 ### Resources
 
 products: url to be posted soon
@@ -132,7 +136,9 @@ Note: The update will not occur on the database
 GET
 
 /products (get all products)
+
 /products/:id (get a single product)
+
 /products/category/home (sort products using category)
 
 POST
