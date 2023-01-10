@@ -25,61 +25,65 @@ export const getSingleProduct = async (req, res) => {
 
 //upload a product
 
-export const uploadProduct = async (req, res) => {
-  try {
-    const { id, price, name, image, description, category } = req.body;
+export const uploadProduct = (req, res) => {
+  const { id, price, name, image, description, category } = req.body;
 
-    const isToSave = new Product({
-      id,
-      price,
-      name,
-      image,
-      description,
-      category,
-    });
-
-    const isSaved = await isToSave.save();
-
-    res.status(200).json(isSaved);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
+  res.status(200).json({ id, price, name, image, description, category });
+  // try {
+  //   const { id, price, name, image, description, category } = req.body;
+  //   const isToSave = new Product({
+  //     id,
+  //     price,
+  //     name,
+  //     image,
+  //     description,
+  //     category,
+  //   });
+  //   const isSaved = await isToSave.save();
+  //   res.status(200).json(isSaved);
+  // } catch (error) {
+  //   res.status(400).json({ error: error.message });
+  // }
 };
 
 //delete a product
 
-export const deleteProduct = async (req, res) => {
-  const { id } = req.params;
+export const deleteProduct = (req, res) => {
+  res.status(200).json("Product deleted succesfully");
 
-  try {
-    const isDeleted = await Product.findOneAndDelete({ _id: id });
+  // const { id } = req.params;
+  // try {
+  //   const isDeleted = await Product.findOneAndDelete({ _id: id });
 
-    res.status(200).json(isDeleted);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
+  //   res.status(200).json(isDeleted);
+  // } catch (error) {
+  //   res.status(400).json({ error: error.message });
+  // }
 };
 
 // update an item
 
-export const updateProduct = async (req, res) => {
+export const updateProduct = (req, res) => {
   const { id } = req.params;
   const { price, name, image, description, category } = req.body;
 
   const data = {
+    id,
     price,
     name,
     image,
     description,
     category,
   };
-  try {
-    const newProduct = await Product.findOneAndUpdate({ _id: id }, data);
 
-    res.status(200).json(newProduct);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
+  res.status(200).json(data);
+  // try {
+  //   const newProduct = await Product.findOneAndUpdate({ _id: id }, data);
+
+  //   res.status(200).json(newProduct);
+  // } catch (error) {
+  //   res.status(400).json({ error: error.message });
+  // }
 };
 
 //sorting by category

@@ -10,8 +10,9 @@ I made this api for teaching purposes only, In a case for a frontend website i f
 
 ### Resources
 
-products: url to be posted soon
-auth: url to be posted soon
+products: https://fakeecommerceapi.onrender.com/api/v1/products
+auth: https://fakeecommerceapi.onrender.com/api/v1/auth
+Token: On registration or login you are given a token
 
 ### Usage
 
@@ -20,7 +21,7 @@ You can fetch datausing any methods you know ie fetch, axios etc
 ### get all products
 
 ```js
-fetch("") //url to be posted soon
+fetch("https://fakeecommerceapi.onrender.com/api/v1/products")
   .then((res) => res.json())
   .then((json) => console.log(json));
 ```
@@ -28,7 +29,7 @@ fetch("") //url to be posted soon
 ### get a single product
 
 ```js
-fetch("") //url to be posted soon
+fetch("https://fakeecommerceapi.onrender.com/api/v1/products/:id")
   .then((res) => res.json())
   .then((json) => console.log(json));
 ```
@@ -36,8 +37,7 @@ fetch("") //url to be posted soon
 ### Upload a product
 
 ```js
-fetch("", {
-  //url to be posted soon
+fetch("https://fakeecommerceapi.onrender.com/api/v1/products", {
   method: "POST",
   body: JSON.stringify({
     name: "new product",
@@ -64,8 +64,7 @@ fetch("", {
 ### delete a product
 
 ```js
-fetch("", {
-  //url to be posted
+fetch("https://fakeecommerceapi.onrender.com/api/v1/products/:id", {
   method: "DELETE",
 });
 
@@ -86,9 +85,7 @@ the response
 ### update a product
 
 ```js
-fetch("", {
-  //url to be posted
-
+fetch("https://fakeecommerceapi.onrender.com/api/v1/products/:id", {
   method: "PUT",
   body: JSON.stringify({
     title: "updated product",
