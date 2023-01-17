@@ -35,3 +35,22 @@ export const userSignup = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+export const getUsers = async (req, res) => {
+  try {
+    const users = await Auth.find();
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+export const getSingleUser = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const user = await Auth.findOne({ _id: id });
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};

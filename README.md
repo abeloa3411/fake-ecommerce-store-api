@@ -173,7 +173,7 @@ GET
 
 POST
 
-/user
+/user (add a user)
 
 DELETE
 
